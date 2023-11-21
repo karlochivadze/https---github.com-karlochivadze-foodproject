@@ -1,0 +1,13 @@
+<app-header></app-header>
+
+<div>
+  
+  <div *ngIf="!isLoading">
+    <pre>{{ data | json }}</pre>
+  </div>
+
+  
+  <app-loader *ngIf="isLoading"></app-loader>
+</div>
+
+<router-outlet></router-outlet>

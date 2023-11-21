@@ -1,0 +1,111 @@
+<div class="container" *ngIf="basket.length != 0">
+  <div class="row">
+    <ng-container>
+      <div class="container">
+        <div class="card-table">
+          <div class="cart-product">
+            <table class="table table-responsive">
+              <thead>
+                <tr>
+                  <th>Sr.No</th>
+                  <th class="productname1">Product Name</th>
+                  <th class="productimage1">Product Image</th>
+                 
+                  <th></th>
+                  <th class="price1">Price</th>
+                   <th >Quantity</th>
+                   <th>Total price:$</th>
+                  
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of basket; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td class="productname1">{{ item.product.name }}</td>
+                  <td>
+                    <img
+                    class="productimage1"
+                      style="width: 120px"
+                      src="{{ item.product.image }}"
+                      alt=""
+                    />
+                  </td>
+                  <td style="width: 25%"></td>
+                  <th class="price1" style="width: 12%">{{ item.product.price }}$</th>
+                  <td style="width: 12%">
+                    <input
+                      type="button"
+                      (click)="changeQuantity(-1, i)"
+                      value="-"
+                      class="button-minus border rounded-circle icon-shape icon-sm mx-1"
+                    />
+                    <input
+                      type=""
+                      step="1"
+                      max="100"
+                      value="{{ item.quantity }}"
+                      name="quantity"
+                      class="quantity-field border-0 text-center w-25"
+                    />
+                    <input
+                      type="button"
+                      (click)="changeQuantity(1, i)"
+                      value="+"
+                      class="button-plus border rounded-circle icon-shape icon-sm"
+                    />
+                  </td>
+                  <td style="width: 12%">
+                    {{ item.quantity * item.product.price }}$
+                  </td>
+                  <td>
+                    <button
+                      (click)="deleteItem(item.product.id, i)"
+                      class="btn btn-danger"
+                    >
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4"></td>
+                  <td><button class="btn btn-danger">Empty Cart</button></td>
+                  <td>
+                    <button routerLink="/products" class="btn btn-primary">
+                      Shop More
+                    </button>
+                  </td>
+                  <td><button class="btn btn-success">Checkout</button></td>
+                  <td>
+                    <strong>Grand Total :  {{ totalPrice() }}$ </strong>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  
+</div>
+
+
+<ng-container *ngIf="basket.length == 0">
+    <div class="container">
+      <div class="card">
+        <h5 class="card-title"></h5>
+      </div>
+
+      <div class="center">
+        <!-- <img
+       
+          src="https://www.wallpaperup.com/uploads/wallpapers/2014/11/09/511694/88f86838327c8e7d8ce4a37caf4d14d0-1400.jpg"
+          alt=""
+        /> -->
+        <h4>Your cart is empty!</h4>
+        <h6>Add product to it now</h6>
+        <button routerLink="/products" class="btn1">Shop Now</button>
+      </div>
+    </div>
+  </ng-container>

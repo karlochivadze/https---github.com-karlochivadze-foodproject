@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+icon-shape {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.icon-sm {
+    width: 2rem;
+    height: 2rem;
+
+}
+
+
+body{
+ 
+   
+    background: url(https://4.bp.blogspot.com/-sqd2cX_sLZY/WKnHpa46-1I/AAAAAAAAApA/YHwjsTZLOdo2udldaTn1KDc_b3VmZkmDQCLcB/s1600/Floor%2BWall%2BRoom%2BWood%2BFoor%2BWallpaper.jpg) no-repeat center center fixed;   -webkit-background-size: cover;  -moz-background-size: cover;  -o-background-size: cover;  background-size: cover;
+}
+
+/* html {   background: url(https://4.bp.blogspot.com/-sqd2cX_sLZY/WKnHpa46-1I/AAAAAAAAApA/YHwjsTZLOdo2udldaTn1KDc_b3VmZkmDQCLcB/s1600/Floor%2BWall%2BRoom%2BWood%2BFoor%2BWallpaper.jpg) no-repeat center center fixed;   -webkit-background-size: cover;  -moz-background-size: cover;  -o-background-size: cover;  background-size: cover;} */

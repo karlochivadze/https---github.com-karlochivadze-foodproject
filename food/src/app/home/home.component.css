@@ -1,0 +1,255 @@
+@import url(https://fonts.googleapis.com/css?family=Anaheim);
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+
+
+h1 {
+  display: table;
+  margin: 5% auto 0;
+  text-transform: uppercase;
+  font-family: 'Anaheim', sans-serif;
+  font-size: 4em;
+  font-weight: 400;
+  text-shadow: 0 1px white, 0 2px black;
+}
+
+.container {
+  margin: 11% auto;
+  width: 410px;
+  height: 140;
+  position: relative;
+  perspective: 1000px;
+}
+
+#carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotation 38s infinite linear;
+}
+
+#carousel:hover {
+  animation-play-state: paused;
+}
+
+#carousel figure {
+  display: block;
+  position: absolute;
+  width: 186px;
+  height: 116px;
+  left: 20px;
+  top: -150px;
+  background: rgb(244, 240, 240);
+  overflow: hidden;
+  border: solid 5px black;
+}
+
+
+@media screen and (max-width: 1616px) {
+ .container{
+  opacity: 0;
+ }
+ #neon{
+  opacity: 0;
+ }
+}
+
+#carousel figure:nth-child(1) { transform: rotateY(0deg) translateZ(288px); }
+#carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px); }
+#carousel figure:nth-child(3) { transform: rotateY(80deg) translateZ(288px); }
+#carousel figure:nth-child(4) { transform: rotateY(120deg) translateZ(288px); }
+#carousel figure:nth-child(5) { transform: rotateY(160deg) translateZ(288px); }
+#carousel figure:nth-child(6) { transform: rotateY(200deg) translateZ(288px); }
+#carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px); }
+#carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px); }
+#carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px); }
+
+img {
+  width: 100%;
+ 
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+img:hover {
+  
+  transform: scale(1.2, 1.2);
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateY(2deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+#neon {
+  position: absolute;
+  width: fit-content;
+  margin-left: 30%; 
+  margin-top: 150px;
+  padding: 0.5rem;
+  /* border: 0.2rem solid #fff; */
+  
+  /* border-radius: 2rem; */
+  /* color: #fff; */
+  /* box-shadow: 0 0 .5rem #fff, inset 0 0 .5rem #fff, 0 0 2rem rgb(214, 225, 236), inset 0 0 2rem rgb(202, 217, 230), 0 0 4rem rgb(36, 38, 41), inset 0 0 4rem rgb(4, 4, 4); */
+}
+
+#neon::-moz-selection {
+  background-color: rgb(45, 51, 57);
+}
+
+#neon::selection {
+  background-color: rgb(6, 6, 6);
+}
+
+#neon:focus {
+  outline: none;
+}
+
+#neon h1 {
+  margin-top: 15px;
+  
+  
+}
+
+
+
+/* .palm1{
+  background-image: url(../../assets/palma1.png);
+  width: 600px;
+  
+  position: absolute;
+  top: 320px;
+  left: 1250px;
+
+  background-size: 100%;
+  height: 650px;  
+  color: #fff;  
+  filter: brightness(0.4);
+   background-size: 100%; 
+    background-size: cover;
+    filter: brightness(0.6);
+
+} */
+
+
+
+
+
+@property --k {
+  syntax: "<number>";
+  initial-value: -1;
+  inherits: true;
+}
+
+
+button {
+  --m: 1.3;
+  grid-area: 2/1/span 1/span 2;
+  position: relative;
+  /* margin: 1em; */
+  /* border: solid 2em transparent; */
+  padding: 1.5em 7.25em;
+  border: 0.2rem solid #fff;
+  box-shadow: inset 0 0 1px #666b7b;
+  box-shadow: 0 0 .5rem #ffffff, inset 0 0 .5rem #fff, 0 0 2rem rgb(214, 225, 236), inset 0 0 2rem rgb(202, 217, 230), 0 0 4rem rgb(36, 38, 41), inset 0 0 4rem rgb(4, 4, 4);
+  color: #0b111294;
+  font: 700 1.5em/1 montserrat, sans-serif;
+}
+#slow:checked ~ button {
+  --m: 5 ;
+}
+
+@keyframes k {
+  0%, 33.3% {
+    --k: 1 ;
+  }
+}
+.particle {
+  --f: 1;
+  --pos-k: max(0, var(--k));
+  --neg-k: max(0, -1*var(--k));
+  --low-c: min(1, 4*(1 - var(--pos-k)));
+  --abs-d: max(var(--neg-k) - .5, .5 - var(--neg-k));
+  --mov-f: var(--pos-k);
+  display: grid;
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  rotate: var(--a);
+  animation: k calc(var(--m)*3s) linear calc(var(--m)*var(--t, 0)*3s) infinite;
+}
+@supports (scale: sqrt(4)) {
+  .particle {
+    --mov-f: sqrt(var(--pos-k)) ;
+  }
+}
+.particle::before, .particle::after {
+  grid-area: 1/1;
+  width: 0.75em;
+  aspect-ratio: 1;
+}
+.particle::before {
+  --sa: calc(min(1, 1 - 2*min(.5, var(--mov-f)))*45deg);
+  border-radius: calc(1.25*min(.8, var(--mov-f))*50%) 50% 50%;
+  transform-origin: 0 0;
+  translate: calc(var(--mov-f)*var(--d));
+  rotate: -45deg;
+  scale: var(--f);
+  transform: skew(var(--sa), var(--sa));
+  opacity: var(--low-c);
+  filter: Saturate(var(--low-c));
+  background: radial-gradient(at 85% 85%, #b7bebe, #eeeeec 75%);
+  content: "";
+}
+.particle::after {
+  translate: -50% -50%;
+  scale: calc(var(--f)*(1 - 2*var(--abs-d)));
+  text-align: center;
+  filter: blur(0.5px);
+  content: "✦";
+}
+
+[type=checkbox] {
+  justify-self: end;
+  margin: 5px;
+  width: 1em;
+  aspect-ratio: 1;
+}
+[type=checkbox], [type=checkbox] + label {
+  align-self: center;
+  font: 1.25em orbitron, monospace;
+  cursor: pointer;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  #neon {
+    display: none; 
+  }
+  #carousel{
+    position: absolute; 
+    top: 650px;
+  }
+
+}

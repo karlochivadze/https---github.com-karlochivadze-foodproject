@@ -1,0 +1,130 @@
+<ul routerLink="products" class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation" *ngFor="let category of categories">
+    <button
+      class="nav-link active"
+      id="home-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#home"
+      type="button"
+      role="tab"
+      aria-controls="home"
+      aria-selected="true"
+      (click)="getByCategory(category.id)"
+    >
+      {{ category.name }}
+    </button>
+  </li>
+</ul>
+
+<div class="container-fluid productsDiv">
+  <div class="d-flex flex-row gap-2 justify-content-center w-100" >
+    <div class=" col-lg-2" >
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">Filters</h5>
+          <div class="card-text">
+            <div>
+              <label for="customRange2" class="form-label"
+                >Spiciness:
+                {{ spiciness != "0" ? spiciness : "Not chosen" }}</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="4"
+                
+                [value]="spiciness"
+                id="customRange2"
+                (change)="setSpiciness($event)"
+              />
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckChecked"
+                  [checked]="nuts"
+                  (change)="setNuts($event)"
+                />
+                <label class="form-check-label" for="flexCheckChecked">
+                  No nuts
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckChecked"
+                  [checked]="vegeterian"
+                  (change)="setVegetarian($event)"
+                />
+                <label class="form-check-label" for="flexCheckChecked">
+                  Vegetarian Only
+                </label>
+              </div>
+            </div>
+            <br />
+            <div>
+              <button
+                type="button"
+                class="btn btn-primary blue"
+                (click)="resetFilters()"
+              >
+                Reset
+              </button>
+            </div>
+            <br />
+            <div>
+              <button
+                type="button"
+                class="btn btn-danger red"
+                (click)="filterProducts()"
+              >
+                Apply filter
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 ">
+      <div class="row gap-1 justify-content-center">
+        <div class="col-lg-3  " *ngFor="let product of products">
+          <div class="card-sl">
+            <div class="card-image">
+              <img
+                [src]="product.image"
+                class="card-img-top cardimg"
+                alt="..."
+              />
+            </div>
+            <div class="card-heading">
+              {{ product.name }}
+            </div>
+            <div class="card-text">Spiciness: {{ product.spiciness }}</div>
+            <div class="card-text">
+              <li>
+                <input type="radio" id="radio-1" name="choose" />
+                <label for="radio-1">Nuts <!--{{ product.nuts }}--> </label>
+              </li>
+              <li>
+                <input type="radio" id="radio-2" name="choose" />
+                <label for="radio-2">Vegetarian{{ product.vegetarian }}</label>
+              </li>
+            </div>
+            <div class="card-text"> price:  {{ product.price }}$</div>
+            <button (click)="addToBasket(product)" class="card-button">
+              Add Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

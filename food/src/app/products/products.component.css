@@ -1,0 +1,295 @@
+*,
+*::after *::before {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.productsDiv {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    
+   
+    
+}
+
+
+.card{
+    position: sticky;
+    z-index: 999;
+    top: 280px;
+    background-image: none;
+    /* background-color: rgba(242, 188, 141, 0.064); */
+    
+    background-repeat: no-repeat;
+    object-fit: cover;
+  
+    border-radius: 35px;
+    transition: background-image 0.15s ease-in-out;
+    background: rgba(255, 255, 255, 0.096);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.403);
+ 
+    
+}
+
+
+
+
+
+.card-sl {
+    border-radius: 2px ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.845), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* background-color: rgba(128, 128, 128, 0.598); */
+    
+    background: rgba(255, 255, 255, 0.096);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.403);
+
+}
+
+/* .card-image img {
+     max-height: 100%;
+    max-width: 100%; 
+    border-radius: ; 
+    background-color: #f4a261; 
+    
+   
+   
+
+} */
+.card-title{
+    color: #050505;
+    margin-left: 90px;
+ 
+    
+}
+
+.card-heading {
+    font-family: 'Aboreto';
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    padding: 10px 15px;
+    transition: 0.3s ease-in-out;
+}
+.card-heading:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+    color: #1c1c1d;
+}
+
+  
+
+.card-text {
+    padding: 10px 15px;
+    /* background: #ffffffa4; */
+    font-family: 'Aboreto';
+    font-size: 14px;
+    color: black;
+}
+
+.card-button {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    width: 100%;
+    background-color:black;
+    color: #f4a261;
+    border-radius:none !important;
+      font-family: 'Aboreto';
+   
+
+    
+}
+
+.card-button:hover {
+    /* text-decoration: none;
+    background-color: #ff0000;
+    color: #fff; */
+    box-shadow: 0 0 10px 0  rgba(242,188,141,1) inset, 0 0 10px 4px rgba(242,188,141,1);
+ 
+
+
+
+}
+
+#myTab {
+   position: absolute;
+    padding: 30px;
+    position: sticky;
+    z-index: 999;
+    top: 269px;
+  
+    object-fit: cover;
+  
+}
+
+
+
+
+#myTab button{
+    font-family: 'Aboreto';
+    padding: 0.5rem 2rem;
+    display: inline-block;
+    border: 3px solid rgb(8, 8, 8);
+    font-size: 0.9rem;
+    /* border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%; */
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
+    background: rgba(128, 128, 128, 0.668);
+    position: relative;
+    
+   
+    background: rgba(255, 255, 255, 0.635);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.403);
+ 
+   
+    
+}
+
+
+
+
+
+#myTab button:hover {
+    
+    transform:translatey(-12px)  ;
+     
+    border-radius:1ch;
+    
+}
+
+
+
+.card .blue {
+    margin-left: 28%;
+    padding: 5px 31px;
+    background: rgba(255, 255, 255, 0.096);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.403);
+}
+
+.card .red {
+    align-items: center;
+    margin-left: 25%;
+    background: rgba(255, 255, 255, 0.096);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.403);
+}
+
+.card .red:hover{
+    color: rgb(0, 2, 3);
+    box-shadow: 2px 0px 5px 10px rgba(0, 0, 0, 0.302);
+    -webkit-box-shadow: 2px 0px 5px 10px rgba(0, 0, 0, 0.335);
+    -moz-box-shadow: 2px 0px 5px 10px rgba(0, 0, 0, 0.38);
+}
+
+.card .blue:hover{
+    color: rgb(0, 2, 3);
+    box-shadow: 2px 0px 5px 10px rgba(0, 0, 0, 0.302);
+    -webkit-box-shadow: 2px 0px 5px 10px rgba(0, 0, 0, 0.335);
+    -moz-box-shadow: 2px 0px 5px 10px rgba(0, 0, 0, 0.38);
+}
+
+
+.card-image {
+    width: 200px;
+    height: 200px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.card-image:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+@media only screen and (max-width: 1500px) {
+    .card-sl {
+     width: 250px;
+   
+   
+    }
+   
+}
+
+@media only screen and (max-width: 1450px) {
+    .row{
+        display: flex;
+      gap: 2px;
+       display: block;
+    width: 100%;
+    height: 100px;
+    margin-left: 110px;
+    /* flex-wrap: wrap; */
+    
+    
+    }
+    .container-fluid{
+        display: flex;
+        gap: 2px;
+         display: block;
+      width: 100%;
+      height: 100px;
+      margin-left: 110px;
+    }
+   
+  
+}
+
+@media only screen and (max-width: 1100px) {
+    .productsDiv{
+        display: flex;
+        
+        
+    }
+    .row{
+        margin-left: 110px;
+    }
+    .container-fluid{
+        margin-left: 140px;
+       
+    }
+}
+@media screen and (max-width: 992px){
+    
+    .productsDiv{
+      margin-left: -90px;
+      padding: -10px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .row{
+          margin-left: 25px;
+    }
+    .container-fluid{
+      margin-left: 125px;
+    }
+}
+@media only screen and (max-width: 592px) {
+}
+@media only screen and (max-width: 600px) {
+    #myTab {
+        top: 50px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
